@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+	
+	<h1 class="bg-success">hi</h1>
+		<div class="row">
+			{% for product in product_list %}
+			<div class="col">
+					{% include "products/snippets/card.html" with instance=product %}
+			</div>
+			{% endfor %}
+		</div>
+
+{% endblock content %}

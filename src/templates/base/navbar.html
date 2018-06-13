@@ -1,0 +1,51 @@
+{% load static %}
+{% url 'home' as home_url %}
+{% url 'contact' as contact_url %}
+{% url 'products:list' as products %}
+{% url 'login' as login %}
+{% url 'logout' as logout %}
+{% url 'register' as register %}
+{% url 'cart:home' as cart_home %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    
+    <img class="mr-3" height="30rem" width="30rem" src="{% static 'ecommerce/images/Python-icon.png' %}" alt="">
+    <a class="navbar-brand " href="{{ home_url }}">{{ brand_name|default:"eCommerce" }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if request.path == home_url%} active {% endif %}">
+          <a class="nav-link" href="{{ home_url }}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item {% if request.path == contact_url%} active {% endif %}">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+        <li class="nav-item {% if request.path == products%} active {% endif %}">
+          <a class="nav-link " href="{% url 'products:list' %}">Products</a>
+        </li>
+        {% if not request.user.is_authenticated %}
+          <li class="nav-item {% if request.path == login%} active {% endif %}">
+            <a class="nav-link " href="{% url 'login' %}">login</a>
+          </li>
+          <li class="nav-item {% if request.path == register%} active {% endif %}">
+            <a class="nav-link " href="{% url 'register' %}">register</a>
+          </li>
+        {% else %}
+          <li class="nav-item {% if request.path == register%} active {% endif %}">
+            <a class="nav-link " href="{{ logout }}">logout</a>
+          </li>
+        {% endif %}
+          <li class="nav-item {% if request.path == cart%} active {% endif %}">
+            <a class="nav-link " href="{{ cart_home }}">
+              <i class="fas fa-shopping-cart"></i> ({{ request.session.cart_items }})
+            </a>
+          </li>
+      </ul>
+      {% include "search/snippets/search_form.html" %}
+    </div>
+  </div>
+</nav>
