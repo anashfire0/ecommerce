@@ -21,10 +21,8 @@ from cart.views import cart_home
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
-    url(r'^login/$', views.login_page, name='login'),
-    url(r'^logout/$', views.logout_view, name='logout'),
-    url(r'^register/$', views.register_page, name='register'),
     url(r'^contact/$', views.ContactView.as_view(), name='contact'),
+    url(r'^user/',include('accounts.urls')),
     url(r'^cart/', include('cart.urls')),
     url(r'^products/', include('products.urls')),
     url(r'^search/', include('search.urls')),

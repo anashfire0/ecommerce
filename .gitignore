@@ -96,3 +96,9 @@ pip-selfcheck.json
 lib64
 share
 share/
+*-uml.png
+*-uml.jpg
+*-uml.jpeg
+/*-uml.png
+/*-uml.jpg
+/*-uml.jpeg

@@ -2,9 +2,9 @@
 {% url 'home' as home_url %}
 {% url 'contact' as contact_url %}
 {% url 'products:list' as products %}
-{% url 'login' as login %}
-{% url 'logout' as logout %}
-{% url 'register' as register %}
+{% url 'accounts:login' as login %}
+{% url 'accounts:logout' as logout %}
+{% url 'accounts:register' as register %}
 {% url 'cart:home' as cart_home %}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,10 +29,10 @@
         </li>
         {% if not request.user.is_authenticated %}
           <li class="nav-item {% if request.path == login%} active {% endif %}">
-            <a class="nav-link " href="{% url 'login' %}">login</a>
+            <a class="nav-link " href="{{ login }}">login</a>
           </li>
           <li class="nav-item {% if request.path == register%} active {% endif %}">
-            <a class="nav-link " href="{% url 'register' %}">register</a>
+            <a class="nav-link " href="{{ register }}">register</a>
           </li>
         {% else %}
           <li class="nav-item {% if request.path == register%} active {% endif %}">

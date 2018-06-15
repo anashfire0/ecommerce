@@ -27,9 +27,14 @@
 			      <td colspan="2"></td>
 			      <td>Subtotal: {{ cart.subtotal }}</td>
 			    </tr>
-			 	   <tr>
+			 	  <tr>
 			      <td colspan="2"></td>
 			      <td><strong>Total: {{ cart.total }}</strong></td>
+			      <td>
+			      	<a href="{% url 'cart:checkout' %}">
+			      	<button class="btn btn btn-success">Checkout</button>
+							</a>
+			      </td>
 			    </tr>
 		  </tbody>
 		</table>
