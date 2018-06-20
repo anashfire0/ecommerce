@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.description{
+			height: 300px;
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+
+	<p class="description">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus dolorum, voluptates consequatur quidem, quia facilis vitae. Nisi minus inventore voluptatibus quasi, consequatur, hic eveniet iusto explicabo est commodi, beatae. Dolor soluta, tempora fugit vitae veniam est quos modi at facere perferendis a atque ad sequi incidunt! Officia ab qui deleniti, consequuntur, quam est. Neque nemo ducimus aliquam laudantium, voluptates dolorem hic delectus adipisci, rem inventore suscipit impedit tempora unde, dolore sit! Aperiam culpa excepturi ad blanditiis, aliquam officia porro ab suscipit obcaecati. Odit odio nam esse reiciendis velit eaque laudantium, minima ipsam id doloremque voluptate quas atque hic officiis illum, nostrum ducimus cumque maxime. Nulla veritatis facere doloremque commodi quis adipisci, facilis, corporis autem nesciunt cumque magnam excepturi saepe accusamus dignissimos molestiae officia perferendis, minus, qui dolore laboriosam blanditiis. Cupiditate nisi dolorem vel labore provident sequi iusto amet, molestias consequuntur, dicta commodi culpa perferendis odio recusandae placeat veniam voluptates, deleniti aspernatur ut reprehenderit inventore necessitatibus reiciendis nulla quaerat! Mollitia cumque officia tempora vitae voluptatum non excepturi eius vero amet laboriosam, minima laborum quod labore iusto blanditiis velit placeat sapiente repudiandae dicta officiis temporibus deleniti asperiores eos dignissimos molestiae. Voluptas, dolores. Et neque molestias magnam voluptatibus ea enim ipsa, nesciunt omnis facilis, libero delectus non dolorem pariatur nemo adipisci incidunt cupiditate. A odio esse, magnam quas quibusdam molestias voluptatem maxime totam, ab sapiente sed? Repudiandae odio accusamus laudantium sunt culpa laboriosam reiciendis maxime, quis ipsa blanditiis quos aliquam amet alias aut saepe placeat, esse quisquam ratione dolor odit qui similique. Aperiam animi non ipsa reprehenderit iste! Molestiae qui rem, reiciendis modi perferendis, itaque beatae saepe quos quia id nesciunt odio vero adipisci! Quod eveniet rem, alias a perferendis nostrum illum nisi facere ex libero, molestias dolor quis asperiores quidem magni, minima reprehenderit earum tempore ratione vel accusamus quaerat cumque assumenda! Repellat eum optio alias similique excepturi cumque totam, ducimus fugiat! Asperiores laboriosam ad rem, doloremque nihil dicta ipsum tempore corporis nostrum iure omnis, dolorum minus est non id aut debitis esse laborum nisi consequatur totam veritatis quibusdam, consectetur iste. Inventore reprehenderit architecto suscipit, sed labore veniam quos facere qui optio ipsum excepturi saepe repellendus perspiciatis, laborum illo iure atque fugit odio at magnam voluptatem animi voluptatibus, odit corporis. Repudiandae officiis, voluptas aliquid, laborum obcaecati consequatur magni dicta error sit, labore sed. Nulla assumenda veritatis quibusdam aliquid ipsam? Ratione libero vitae fugit quisquam repellendus sed earum perspiciatis molestiae dolorem, nulla quibusdam minima sapiente repellat ab. Labore magni sunt ea ipsa inventore beatae facilis laboriosam blanditiis nobis molestiae? A numquam similique quas error. Laudantium similique sapiente cumque necessitatibus, minima, vero fugiat, voluptatibus commodi id ut fugit eveniet consequatur porro distinctio suscipit odio debitis exercitationem maiores tempore aut sit saepe! Error cumque unde pariatur nisi sint incidunt, enim commodi itaque labore maxime aspernatur totam? Assumenda aperiam minus, nobis nisi dolores, porro explicabo magnam a voluptate accusamus quae. Sed cumque, consectetur maiores aliquid fugit maxime vitae, temporibus optio dicta autem laborum saepe vel sint quos earum perspiciatis libero ipsum perferendis odit corporis quisquam distinctio magni.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia vitae quos laudantium ipsum blanditiis eligendi aut quibusdam, vero repellat tempora voluptas quia vel incidunt tempore officiis eius earum voluptate debitis quisquam pariatur quae modi qui sequi ex. Qui rerum porro ex vitae nihil, provident repellendus repudiandae dolorum perspiciatis architecto alias incidunt ipsa. Dolore iste cum nulla obcaecati, ab a deserunt nemo. Quas corporis nostrum dolore odio laudantium accusantium quam? Pariatur aspernatur at maxime officiis adipisci, repudiandae, culpa assumenda explicabo ducimus earum maiores ipsam molestiae nostrum nemo ut! Quas magni necessitatibus optio, tempora eveniet vitae natus perspiciatis dolores aliquam vero. Blanditiis totam odio iusto ad voluptatem esse, sint quo asperiores. Voluptatem cum quam eos repellendus! Laudantium consequuntur quae veniam. Sed molestias dolorum, atque debitis necessitatibus inventore natus numquam voluptatem aliquam rem laborum tempora modi sequi, aut, illum nobis ipsam, fugit distinctio soluta beatae rerum. Possimus, officiis laborum deleniti molestias explicabo laudantium dicta pariatur iure natus nobis fugit sequi debitis, quasi sapiente nam vel hic. Fugit numquam, mollitia! Distinctio maxime ipsa accusamus reiciendis itaque eligendi deleniti dolorem, fugiat alias laborum unde rem, aut odit doloremque ullam quia ipsum repellat deserunt atque sint! Iste, sit, ex. Sint magnam officiis, nam facilis neque dicta!
+	</p>
+
+	<script src="jquery.js"></script>
+	<script>
+	$(document).ready(function(){
+		var $description = $('.description')
+		console.log($description.height());
+		$.each($description, function(index, obj){
+			console.log(obj,$description,obj.scrollHeight);
+			console.log( $(this))
+			if (obj.scrollHeight > $description.height()){
+				$(this).css("overflow-y", "scroll")
+			}
+		});	
+	});
+	// $(document).ready(function(){
+	// 	setTimeout(function(){$('body').css("background", "black")
+	// 	}, 1000)
+	// });
+	// setTimeout(function() {
+	// 	$('h1').css('color','orange').text('hello is orange');
+	// }, 2000);
+	</script>
+</body>
+</html>

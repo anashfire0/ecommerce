@@ -1,7 +1,90 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
-	<h1>home page</h1>	
-	
-			
+<svg width="300" height="200">
+    <rect width="100%" height="100%" fill="green" />
+</svg>
+	<h1 title="title works">home page</h1>	
+	<p title="title workd" target="_blank">p tag</p>	
+	<a href="" title='tiel'>title</a>
+	<input type="text" disabled>
+	<p id="hello">Hello</p>
+
+	{# <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31111.278002946397!2d77.59508042150779!3d12.913521817206162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14fc91a93031%3A0xf0afe62576cbdc3f!2sBTM+Layout%2C+Bengaluru%2C+Karnataka!5e0!3m2!1sen!2sin!4v1529373841438" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> #}
+
+	{# Resolution switching #}
+	<img srcset="elva-fairy-320w.jpg,
+             elva-fairy-480w.jpg 1.5x,
+             elva-fairy-640w.jpg 2x"
+   src="elva-fairy-640w.jpg" alt="Elva dressed as a fairy">
+
+   {# Art switching #}
+	 <picture>
+	  <source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">
+	  <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
+	  <img src="{% static 'images/Python-icon.png' %}" alt="Flowers" style="width:auto;">
+	</picture>
+
+	<blockquote >
+		Aankho ki hai ye khwaahishein ke chehre se tere na hate --
+		<cite><a href="https://www.google.com">source is here</a></cite>
+	</blockquote>
+
+	<abbr title="World Health Organisation">WHO</abbr>
+	<br>
+	<abbr title="Doctor">Dr</abbr> Sultan Moinuddin
+
+	<p>2<sup>nd</sup> person is good</p>
+
+	<pre><code>var para = document.querySelector('p');
+
+	para.onclick = function() {
+	  alert('Owww, stop poking me!');
+	}</code></pre>
+
+	<p>You shouldn't use presentational elements like <code>&lt;font&gt; no whitespace preserved</code> and <code>&lt;center&gt;</code>.</p>
+
+	<time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+	<br>
+	<bdo dir="rtl">Woo this is reverse</bdo>
+
+	<p>In the above JavaScript example, <var>para</var> represents a paragraph element.</p>
+
+
+	<p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+	<pre>$ <kbd>ping mozilla.org</kbd>
+	<samp>PING mozilla.org (63.245.215.20): 56 data bytes
+	64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+	<p>Hi there <q cite='#'>this is my fight song</q></p>
+	<script>
+		for(i=0; i < 19; i++)
+			document.write('<p> hi </p>');
+	</script>
+	<a href="#hello">go to hello</a><br>
+	<a href="{% url 'products:list' %}#xbox">go to xbox</a><br>
+	<!-- download attribute provides a default name for download and browser  directly downloads this file  -->
+	<a href="{% static 'bootstrap/bootstrap.min.css' %}" download="bt"> bootstrap content</a> <br>
+	<a href="mailto:">Mail anyone</a><br>
+	<a href="mailto:anashfire0@gmail.com">Mail me</a><br>
+	<a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+  Send mail with cc, bcc, subject and body</a
+<address>
+	written by me
+</address>
+
+<video controls>
+  <source src="rabbit320.mp4" type="video/mp4">
+  <source src="rabbit320.webm" type="video/webm">
+ <track kind="subtitles" src="subtitles_en.vtt" srclang="en">
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+</video>
+
+
+<audio controls>
+  <source src="viper.mp3" type="audio/mp3">
+  <source src="viper.ogg" type="audio/ogg">
+  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+</audio>
 {% endblock content %}

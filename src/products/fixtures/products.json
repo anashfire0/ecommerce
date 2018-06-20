@@ -1,0 +1,93 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "T shirt",
+        "slug": "t-shirt",
+        "description": "Buy this",
+        "price": "19.99",
+        "image": "",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Hat",
+        "slug": "hat",
+        "description": "this is a hat",
+        "price": "20.07",
+        "image": "products/4064/4064.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "screen",
+        "slug": "screen",
+        "description": "this is a screen",
+        "price": "19.99",
+        "image": "products/8767/8767.png",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "title": "supercomputer",
+        "slug": "supercomputer",
+        "description": "can do anythin",
+        "price": "1232.23",
+        "image": "",
+        "featured": true,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "title": "pants",
+        "slug": "pants",
+        "description": "this is pants",
+        "price": "19.98",
+        "image": "",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "title": "Sweat shirt",
+        "slug": "sweat-shirt",
+        "description": "nice",
+        "price": "19.99",
+        "image": "products/3959/3959.jpg",
+        "featured": false,
+        "active": true
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "title": "Xbox",
+        "slug": "xbox",
+        "description": "Microsoft's xbox is awesome",
+        "price": "1220.14",
+        "image": "",
+        "featured": false,
+        "active": true
+    }
+}
+]

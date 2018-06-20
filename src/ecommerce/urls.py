@@ -18,14 +18,19 @@ from django.contrib import admin
 
 from . import views
 from cart.views import cart_home
+from addresses.views import checkout_address_create_view, checkout_address_reuse_view
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
-    url(r'^contact/$', views.ContactView.as_view(), name='contact'),
+    url(r'^contact/$', views.contact_view, name='contact'),
+    url(r'^checkout/address/create/$',checkout_address_create_view, name='checkout_address_create'),
+    url(r'^checkout/address/reuse/$',checkout_address_reuse_view, name='checkout_address_reuse'),
     url(r'^user/',include('accounts.urls')),
     url(r'^cart/', include('cart.urls')),
     url(r'^products/', include('products.urls')),
     url(r'^search/', include('search.urls')),
+    url(r'^marketing/', include('marketing.urls')),
+
 ]
 
 from django.conf import settings

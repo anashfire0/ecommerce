@@ -4,8 +4,11 @@
 	  <img width="250px" height="250px" class="card-image-top" src="{{ instance.image.url }}" alt="{{ instance.title }}">
 	{% endif %}
   <div class="card-body">
-    <h5 class="card-title">{{ instance.title|truncatewords:12 }}</h5>
+    <h5 id="{{ instance.title|lower }}" class="card-title">{{ instance.title|truncatewords:12 }}</h5>
     <p class="card-text">{{ instance.descrition }}</p>
+    <div class="row justify-content-between">
     <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">Description</a>
+		{% include "products/snippets/update-cart.html" with product=instance %}
+    </div>
   </div>
 </div>

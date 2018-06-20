@@ -3,7 +3,7 @@
 {% block content %}
 	<h1>cart</h1>	
 	{% if cart.products.exists %}
-		<table class="table">
+		<table class="table cart-table">
 		  <thead>
 		    <tr>
 		      <th>#</th>
@@ -12,32 +12,30 @@
 		      <th>Action</th>
 		    </tr>
 		  </thead>
-		  <tbody>
-		  	{% for product in cart.products.all %}
-			    <tr>
-			      <th scope="row">{{ forloop.counter }}</th>
-			      <td>{{ product.title }}</td>
-			      <td>{{ product.price }}</td>
-			      <td>
-							{% include "products/snippets/update-cart.html" with product=product cart=cart%}
-			      </td>
-			    </tr>
-		  	{% endfor %}
+		  <tbody class="cart-body">
+			  	{% for product in cart.products.all %}
+				    <tr class="cart-product">
+				      <th scope="row">{{ forloop.counter }}</th>
+				      <td><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></td>
+				      <td>{{ product.price }}</td>
+				      <td>{% include "cart/snippets/remove-product.html" with product_id=product.id%}</td>
+				    </tr>
+			  	{% endfor %}
 			    <tr>
 			      <td colspan="2"></td>
-			      <td>Subtotal: {{ cart.subtotal }}</td>
+				    <td>Subtotal:<span id="cart-subtotal" class="cart-subtotal">{{ cart.subtotal }}</span></td>
 			    </tr>
 			 	  <tr>
 			      <td colspan="2"></td>
-			      <td><strong>Total: {{ cart.total }}</strong></td>
-			      <td>
-			      	<a href="{% url 'cart:checkout' %}">
-			      	<button class="btn btn btn-success">Checkout</button>
-							</a>
-			      </td>
+				    <td><strong>Total:<span class="cart-total">{{ cart.total }}</span></strong></td>
+			      <td> <a class="btn btn-primary" href="{% url 'cart:checkout_home' %}">Checkout</a></td>
 			    </tr>
 		  </tbody>
 		</table>
+
+		<div class="cart-item-remove-form" style="display:none">
+			{% include "cart/snippets/remove-product.html"%}
+		</div>
 	{% else %}
 		<p class="lead">Cart is empty</p>
 	{% endif %}

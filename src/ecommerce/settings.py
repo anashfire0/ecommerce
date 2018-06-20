@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'cart',
     'orders',
     'billing',
+    'addresses',
+    'marketing',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +137,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
 
 LOGOUT_REDIRECT_URL = 'accounts:login'
+
+AUTH_USER_MODEL = 'accounts.User'
+
+#mailchimp stuff
+MAILCHIMP_API_KEY       = "f286738bcd202ca30905ee7fe507a80f-us18"
+MAILCHIMP_DATA_CENTER   = 'us18'
+MAILCHIMP_EMAIL_LIST_ID = '4fde4f6191'
