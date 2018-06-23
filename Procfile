@@ -1,0 +1,1 @@
+web: gunicore ecommerce.wsgi
